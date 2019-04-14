@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-04-14T17:01:25Z" product-name="nw_todos">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-04-14T18:12:28Z" product-name="nw_todos">
 		<header/>
 		<body>
 			<trans-unit id="tx_nwtodos_domain_model_todo">
@@ -11,6 +11,9 @@
 			</trans-unit>
 			<trans-unit id="tx_nwtodos_domain_model_todo.detail">
 				<source>Detail</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.ordering">
+				<source>Ordering</source>
 			</trans-unit>
 			<trans-unit id="tx_nwtodos_domain_model_todo.due_start_time">
 				<source>Due Start Time</source>

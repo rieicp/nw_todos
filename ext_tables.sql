@@ -8,6 +8,7 @@ CREATE TABLE tx_nwtodos_domain_model_todo (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	detail text,
+	ordering int(11) DEFAULT '9999' NOT NULL,
 	due_start_time datetime DEFAULT NULL,
 	due_end_time datetime DEFAULT NULL,
 	must_do smallint(5) unsigned DEFAULT '0' NOT NULL,

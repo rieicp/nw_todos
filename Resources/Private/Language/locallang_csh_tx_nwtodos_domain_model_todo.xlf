@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-04-14T17:01:25Z" product-name="nw_todos">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-04-14T18:12:28Z" product-name="nw_todos">
 		<header/>
 		<body>
 			<trans-unit id="title.description">
@@ -8,6 +8,9 @@
 			</trans-unit>
 			<trans-unit id="detail.description">
 				<source>detail</source>
+			</trans-unit>
+			<trans-unit id="ordering.description">
+				<source>ordering</source>
 			</trans-unit>
 			<trans-unit id="due_start_time.description">
 				<source>dueStartTime</source>

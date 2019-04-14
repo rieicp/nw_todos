@@ -10,6 +10,6 @@ plugin.tx_nwtodos_tasklising {
     }
     persistence {
         # cat=plugin.tx_nwtodos_tasklising//a; type=string; label=Default storage PID
-        storagePid =
+        storagePid = 28
     }
 }

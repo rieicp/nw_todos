@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,detail,due_start_time,due_end_time,must_do,finished,category,links,files',
+        'searchFields' => 'title,detail,ordering,due_start_time,due_end_time,must_do,finished,category,links,files',
         'iconfile' => 'EXT:nw_todos/Resources/Public/Icons/tx_nwtodos_domain_model_todo.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, detail, due_start_time, due_end_time, must_do, finished, category, links, files',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, detail, ordering, due_start_time, due_end_time, must_do, finished, category, links, files',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, detail, due_start_time, due_end_time, must_do, finished, category, links, files, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, detail, ordering, due_start_time, due_end_time, must_do, finished, category, links, files, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -132,6 +132,16 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim'
+            ]
+        ],
+        'ordering' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:nw_todos/Resources/Private/Language/locallang_db.xlf:tx_nwtodos_domain_model_todo.ordering',
+            'config' => [
+                'type' => 'input',
+                'size' => 4,
+                'default' => '9999',
+                'eval' => 'int'
             ]
         ],
         'due_start_time' => [

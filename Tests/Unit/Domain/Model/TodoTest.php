@@ -77,6 +77,31 @@ class TodoTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
+    public function getOrderingReturnsInitialValueForInt()
+    {
+        self::assertSame(
+            0,
+            $this->subject->getOrdering()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setOrderingForIntSetsOrdering()
+    {
+        $this->subject->setOrdering(12);
+
+        self::assertAttributeEquals(
+            12,
+            'ordering',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
     public function getDueStartTimeReturnsInitialValueForDateTime()
     {
         self::assertEquals(

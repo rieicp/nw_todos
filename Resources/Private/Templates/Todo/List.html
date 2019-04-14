@@ -13,14 +13,15 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h1>Listing for Todo</h1>
+		<h4>EXT:nw_todos - Listing for Todos</h4>
 
 		<f:flashMessages />
 
-		<table  class="tx_nwtodos" >
+		<table class="tx_nwtodos" >
 			<tr>
 				<th><f:translate key="tx_nwtodos_domain_model_todo.title" /></th>
 				<th><f:translate key="tx_nwtodos_domain_model_todo.detail" /></th>
+				<th><f:translate key="tx_nwtodos_domain_model_todo.ordering" /></th>
 				<th><f:translate key="tx_nwtodos_domain_model_todo.due_start_time" /></th>
 				<th><f:translate key="tx_nwtodos_domain_model_todo.due_end_time" /></th>
 				<th><f:translate key="tx_nwtodos_domain_model_todo.must_do" /></th>
@@ -36,6 +37,7 @@
 				<tr>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.title}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.detail}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.ordering}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.dueStartTime -> f:format.date()}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.dueEndTime -> f:format.date()}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.mustDo}</f:link.action></td>
@@ -43,12 +45,12 @@
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.category}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.links}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.files}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{todo : todo}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{todo : todo}">Delete</f:link.action></td>
+<!--					<td><f:link.action action="edit" arguments="{todo : todo}">Edit</f:link.action></td>-->
+<!--					<td><f:link.action action="delete" arguments="{todo : todo}">Delete</f:link.action></td>-->
 				</tr>
 			</f:for>
 		</table>
 
-		<f:link.action action="new">New Todo</f:link.action>
+<!--		<f:link.action action="new">New Todo</f:link.action>-->
 	</f:section>
 </html>

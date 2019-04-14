@@ -33,6 +33,13 @@ class Todo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $detail = '';
 
     /**
+     * ordering
+     *
+     * @var int
+     */
+    protected $ordering = 0;
+
+    /**
      * dueStartTime
      *
      * @var \DateTime
@@ -61,6 +68,13 @@ class Todo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $finished = false;
 
     /**
+     * category
+     *
+     * @var int
+     */
+    protected $category = 0;
+
+    /**
      * links
      *
      * @var int
@@ -73,13 +87,6 @@ class Todo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var int
      */
     protected $files = 0;
-
-    /**
-     * category
-     *
-     * @var int
-     */
-    protected $category = 0;
 
     /**
      * Returns the title
@@ -121,6 +128,27 @@ class Todo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setDetail($detail)
     {
         $this->detail = $detail;
+    }
+
+    /**
+     * Returns the ordering
+     *
+     * @return int $ordering
+     */
+    public function getOrdering()
+    {
+        return $this->ordering;
+    }
+
+    /**
+     * Sets the ordering
+     *
+     * @param int $ordering
+     * @return void
+     */
+    public function setOrdering($ordering)
+    {
+        $this->ordering = $ordering;
     }
 
     /**
@@ -228,6 +256,27 @@ class Todo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * Returns the category
+     *
+     * @return int $category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Sets the category
+     *
+     * @param int $category
+     * @return void
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
      * Returns the links
      *
      * @return int $links
@@ -251,7 +300,7 @@ class Todo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the files
      *
-     * @return int files
+     * @return int $files
      */
     public function getFiles()
     {

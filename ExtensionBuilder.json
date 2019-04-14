@@ -63,6 +63,17 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": false,
+                            "propertyName": "ordering",
+                            "propertyType": "Integer",
+                            "uid": "319275325304"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
                             "propertyName": "dueStartTime",
                             "propertyType": "NativeDateTime",
                             "uid": "1289154189906"
@@ -184,7 +195,7 @@
     },
     "wires": [],
     "log": {
-        "last_modified": "2019-04-14 05:01",
+        "last_modified": "2019-04-14 06:12",
         "extension_builder_version": "8.10.2",
         "be_user": " (1)"
     }
