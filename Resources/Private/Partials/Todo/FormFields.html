@@ -1,0 +1,38 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="title">
+	<f:translate key="tx_nwtodos_domain_model_todo.title" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="title" /><br />
+<label for="detail">
+	<f:translate key="tx_nwtodos_domain_model_todo.detail" />
+</label><br />
+	<f:form.textarea property="detail" cols="40" rows="15" /><br />
+<label for="dueStartTime">
+	<f:translate key="tx_nwtodos_domain_model_todo.due_start_time" />
+</label><br />
+	<f:form.textfield property="dueStartTime" value="{todo.dueStartTime->f:format.date()}" /><br />
+<label for="dueEndTime">
+	<f:translate key="tx_nwtodos_domain_model_todo.due_end_time" />
+</label><br />
+	<f:form.textfield property="dueEndTime" value="{todo.dueEndTime->f:format.date()}" /><br />
+<label for="mustDo">
+	<f:translate key="tx_nwtodos_domain_model_todo.must_do" />
+</label><br />
+	<f:form.checkbox property="mustDo" value="1" /><br />
+<label for="finished">
+	<f:translate key="tx_nwtodos_domain_model_todo.finished" />
+</label><br />
+	<f:form.checkbox property="finished" value="1" /><br />
+<label for="category">
+	<f:translate key="tx_nwtodos_domain_model_todo.category" />
+</label><br />
+	<f:form.textfield property="category" /><br />
+<label for="links">
+	<f:translate key="tx_nwtodos_domain_model_todo.links" />
+</label><br />
+	<f:form.textfield property="links" /><br />
+<label for="files">
+	<f:translate key="tx_nwtodos_domain_model_todo.files" />
+</label><br />
+	<f:form.textfield property="files" /><br />
+</html>

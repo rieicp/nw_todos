@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-04-14T17:01:25Z" product-name="nw_todos">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="detail.description">
+				<source>detail</source>
+			</trans-unit>
+			<trans-unit id="due_start_time.description">
+				<source>dueStartTime</source>
+			</trans-unit>
+			<trans-unit id="due_end_time.description">
+				<source>dueEndTime</source>
+			</trans-unit>
+			<trans-unit id="must_do.description">
+				<source>mustDo</source>
+			</trans-unit>
+			<trans-unit id="finished.description">
+				<source>finished</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="links.description">
+				<source>links</source>
+			</trans-unit>
+			<trans-unit id="files.description">
+				<source>files</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

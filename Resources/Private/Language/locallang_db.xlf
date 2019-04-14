@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-04-14T17:01:25Z" product-name="nw_todos">
+		<header/>
+		<body>
+			<trans-unit id="tx_nwtodos_domain_model_todo">
+				<source>Todo</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.detail">
+				<source>Detail</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.due_start_time">
+				<source>Due Start Time</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.due_end_time">
+				<source>Due End Time</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.must_do">
+				<source>Must Do</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.finished">
+				<source>Finished</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.links">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="tx_nwtodos_domain_model_todo.files">
+				<source>Files</source>
+			</trans-unit>
+			<trans-unit id="tx_nw_todos_tasklising.name">
+				<source>Todos - Task Listing</source>
+			</trans-unit>
+			<trans-unit id="tx_nw_todos_tasklising.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
