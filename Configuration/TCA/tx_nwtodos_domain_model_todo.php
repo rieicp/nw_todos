@@ -131,7 +131,9 @@ return [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default',
             ]
         ],
         'ordering' => [

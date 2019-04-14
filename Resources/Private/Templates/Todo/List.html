@@ -13,11 +13,11 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h4>EXT:nw_todos - Listing for Todos</h4>
+<!--		<h4>EXT:nw_todos - Listing for Todos</h4>-->
 
 		<f:flashMessages />
 
-		<table class="tx_nwtodos" >
+<!--		<table class="tx_nwtodos" >
 			<tr>
 				<th><f:translate key="tx_nwtodos_domain_model_todo.title" /></th>
 				<th><f:translate key="tx_nwtodos_domain_model_todo.detail" /></th>
@@ -45,12 +45,40 @@
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.category}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.links}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.files}</f:link.action></td>
-<!--					<td><f:link.action action="edit" arguments="{todo : todo}">Edit</f:link.action></td>-->
-<!--					<td><f:link.action action="delete" arguments="{todo : todo}">Delete</f:link.action></td>-->
+					<td><f:link.action action="edit" arguments="{todo : todo}">Edit</f:link.action></td>
+					<td><f:link.action action="delete" arguments="{todo : todo}">Delete</f:link.action></td>
 				</tr>
 			</f:for>
 		</table>
 
-<!--		<f:link.action action="new">New Todo</f:link.action>-->
+		<f:link.action action="new">New Todo</f:link.action>-->
+
+		<style>
+			.test01{
+				height: 100%;
+				border: solid darkgreen 3px;
+				padding-left: 10px;
+				padding-top: 10px;
+			}
+		</style>
+
+		<div class="container">
+			<div id="simple-list" class="row">
+				<h4 class="col-12">Todo list</h4>
+				<div class="col-5">
+					<div id="example1" class="list-group col" ondrop="drop_list_item(event)">
+						<f:for each="{todos}" as="todo" key="key">
+							<div class="list-group-item" id="list-item-{key}" data-detail="{todo.detail}">{todo.title}</div>
+						</f:for>
+					</div>
+				</div>
+				<div class="col-7">
+					<div class="test01">
+						detail......
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</f:section>
 </html>
