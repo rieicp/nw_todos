@@ -1,6 +1,8 @@
 <?php
 namespace NWInt\NwTodos\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+
 /***
  *
  * This file is part of the "Todos Listing" Extension for TYPO3 CMS.
@@ -17,4 +19,15 @@ namespace NWInt\NwTodos\Domain\Repository;
  */
 class TodoRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    public function createQuery()
+    {
+        $query = $this->persistenceManager->createQueryForType($this->objectType);
+
+        $query->setOrderings(['ordering' => QueryInterface::ORDER_ASCENDING]);
+
+        if ($this->defaultQuerySettings !== null) {
+            $query->setQuerySettings(clone $this->defaultQuerySettings);
+        }
+        return $query;
     }
+}
