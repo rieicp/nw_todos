@@ -6,6 +6,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY ordering ASC',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -17,7 +18,8 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title,detail,ordering,due_start_time,due_end_time,must_do,finished,category,links,files',
-        'iconfile' => 'EXT:nw_todos/Resources/Public/Icons/tx_nwtodos_domain_model_todo.gif'
+        'iconfile' => 'EXT:nw_todos/Resources/Public/Icons/tx_nwtodos_domain_model_todo.gif',
+        'label_userFunc' => 'NWInt\\NwTodos\\Backend\\TCA\\Labels->getTodoRecordLabel',
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, detail, ordering, due_start_time, due_end_time, must_do, finished, category, links, files',
