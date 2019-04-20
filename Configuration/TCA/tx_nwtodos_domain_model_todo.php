@@ -6,7 +6,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'default_sortby' => 'ORDER BY ordering ASC',
+        'default_sortby' => 'ORDER BY finished ASC, hidden ASC, ordering ASC',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',

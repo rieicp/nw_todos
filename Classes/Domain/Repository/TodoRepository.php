@@ -23,7 +23,13 @@ class TodoRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     {
         $query = $this->persistenceManager->createQueryForType($this->objectType);
 
+        /* 按 'ordering' 排序 */
         $query->setOrderings(['ordering' => QueryInterface::ORDER_ASCENDING]);
+
+        /* 排除已完成的 */
+        $query->matching(
+			$query->equals('finished', 0)
+        );
 
         if ($this->defaultQuerySettings !== null) {
             $query->setQuerySettings(clone $this->defaultQuerySettings);
