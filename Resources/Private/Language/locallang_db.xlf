@@ -36,10 +36,10 @@
 			<trans-unit id="tx_nwtodos_domain_model_todo.files">
 				<source>Files</source>
 			</trans-unit>
-			<trans-unit id="tx_nw_todos_tasklising.name">
+			<trans-unit id="tx_nw_todos_tasklisting.name">
 				<source>Todos - Task Listing</source>
 			</trans-unit>
-			<trans-unit id="tx_nw_todos_tasklising.description">
+			<trans-unit id="tx_nw_todos_tasklisting.description">
 				<source></source>
 			</trans-unit>
 		</body>

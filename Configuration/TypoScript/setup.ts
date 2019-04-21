@@ -1,15 +1,15 @@
 
-plugin.tx_nwtodos_tasklising {
+plugin.tx_nwtodos_tasklisting {
     view {
         templateRootPaths.0 = EXT:nw_todos/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_nwtodos_tasklising.view.templateRootPath}
+        templateRootPaths.1 = {$plugin.tx_nwtodos_tasklisting.view.templateRootPath}
         partialRootPaths.0 = EXT:nw_todos/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_nwtodos_tasklising.view.partialRootPath}
+        partialRootPaths.1 = {$plugin.tx_nwtodos_tasklisting.view.partialRootPath}
         layoutRootPaths.0 = EXT:nw_todos/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_nwtodos_tasklising.view.layoutRootPath}
+        layoutRootPaths.1 = {$plugin.tx_nwtodos_tasklisting.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_nwtodos_tasklising.persistence.storagePid}
+        storagePid = {$plugin.tx_nwtodos_tasklisting.persistence.storagePid}
         #recursive = 1
     }
     features {

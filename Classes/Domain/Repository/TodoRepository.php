@@ -2,6 +2,7 @@
 namespace NWInt\NwTodos\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 
 /***
  *
@@ -21,6 +22,8 @@ class TodoRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
     public function createQuery()
     {
+        $configurationM = $this->objectManager->get(ConfigurationManagerInterface::class);
+        $settings = $configurationM->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS);
         $query = $this->persistenceManager->createQueryForType($this->objectType);
 
         /* 按 'ordering' 排序 */
@@ -31,9 +34,13 @@ class TodoRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 			$query->equals('finished', 0)
         );
 
+        /* 限定最多显示的数量 */
+        $query->setLimit(intval($settings['todos']['max']));
+
         if ($this->defaultQuerySettings !== null) {
             $query->setQuerySettings(clone $this->defaultQuerySettings);
         }
         return $query;
     }
 }
+
