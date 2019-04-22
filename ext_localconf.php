@@ -9,11 +9,11 @@ call_user_func(
             'NWInt.NwTodos',
             'Tasklisting',
             [
-                'Todo' => 'list, search, add, show, update, delete'
+                'Todo' => 'list, search, add, show, update, delete, setItemsOrdering'
             ],
             // non-cacheable actions
             [
-                'Todo' => 'list, search, add, show, update, delete'
+                'Todo' => 'list, search, add, show, update, delete, setItemsOrdering'
             ]
         );
 

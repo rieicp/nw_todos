@@ -25,7 +25,33 @@ class TodoController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     protected $todoRepository = null;
 
-    public function correctifyTodosOrdering(): void
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
+     */
+    protected $pm;
+
+    public function initializeAction()
+    {
+        $this->pm = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager::class);
+    }
+
+    public function setItemsOrderingAction(): string
+    {
+        $parameters = $this->request->getArguments();
+
+        foreach ($parameters['items'] as $k => $v) {
+            $uid = $parameters['items'][$k]['todo_uid'];
+            $todo = $this->todoRepository->findByUid($uid);
+            $todo->setOrdering(intval($parameters['items'][$k]['todo_ordering']));
+            $this->todoRepository->update($todo);
+        }
+
+        $this->pm->persistAll();
+
+        return json_encode(array('message' => 'Success! tx_nwtodos_tasklisting :: setting ordering - it works!'));
+    }
+
+    public function correctifyAllOrderingAction()
     {
         $allTodos = $this->todoRepository->findAll();
         for ($i = 0; $i < $allTodos->count(); $i++) {
@@ -33,8 +59,7 @@ class TodoController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $this->todoRepository->update($allTodos[$i]);
         }
 
-        $pm = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager::class);
-        $pm->persistAll();
+        $this->pm->persistAll();
     }
 
     /**
@@ -44,11 +69,12 @@ class TodoController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $this->correctifyTodosOrdering();
+        $this->correctifyAllOrderingAction();
 
         $todos = $this->todoRepository->findCertainTodos($this->settings);
 
         $this->view->assign('todos', $todos);
+        $this->view->assign('pageid', $GLOBALS['TSFE']->id);
     }
 
     /**

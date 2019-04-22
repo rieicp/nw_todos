@@ -17,42 +17,6 @@
 
 		<f:flashMessages />
 
-<!--		<table class="tx_nwtodos" >
-			<tr>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.title" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.detail" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.ordering" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.due_start_time" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.due_end_time" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.must_do" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.finished" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.category" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.links" /></th>
-				<th><f:translate key="tx_nwtodos_domain_model_todo.files" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
-			<f:for each="{todos}" as="todo">
-				<tr>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.title}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.detail}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.ordering}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.dueStartTime -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.dueEndTime -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.mustDo}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.finished}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.category}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.links}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{todo : todo}"> {todo.files}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{todo : todo}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{todo : todo}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
-
-		<f:link.action action="new">New Todo</f:link.action>-->
-
 		<style>
 			.test01{
 				height: 100%;
@@ -63,12 +27,13 @@
 		</style>
 
 		<div class="container">
+			<input id="pageid" type="hidden" value="{pageid}" />
 			<div id="simple-list" class="row">
 				<h4 class="col-12">Todo list</h4>
 				<div class="col-5">
 					<div id="example1" class="list-group col" ondrop="drop_list_item(event)">
-						<f:for each="{todos}" as="todo" key="key">
-							<div class="list-group-item" id="list-item-{key}" data-detail="{todo.detail}">{todo.title}</div>
+						<f:for each="{todos}" key="key" as="todo">
+							<div class="list-group-item" todo-uid="{todo.uid}" data-detail="{todo.detail}">{todo.title}</div>
 						</f:for>
 					</div>
 				</div>
