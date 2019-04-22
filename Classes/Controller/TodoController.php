@@ -25,6 +25,18 @@ class TodoController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     protected $todoRepository = null;
 
+    public function correctifyTodosOrdering(): void
+    {
+        $allTodos = $this->todoRepository->findAll();
+        for ($i = 0; $i < $allTodos->count(); $i++) {
+            $allTodos[$i]->setOrdering($i);
+            $this->todoRepository->update($allTodos[$i]);
+        }
+
+        $pm = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager::class);
+        $pm->persistAll();
+    }
+
     /**
      * action list
      *
@@ -32,7 +44,10 @@ class TodoController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $todos = $this->todoRepository->findAll();
+        $this->correctifyTodosOrdering();
+
+        $todos = $this->todoRepository->findCertainTodos($this->settings);
+
         $this->view->assign('todos', $todos);
     }
 
@@ -107,4 +122,5 @@ class TodoController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->todoRepository->remove($todo);
         $this->redirect('list');
     }
+
 }
