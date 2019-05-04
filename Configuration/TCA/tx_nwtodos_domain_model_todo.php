@@ -25,7 +25,7 @@ return [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, detail, ordering, due_start_time, due_end_time, must_do, finished, category, links, files',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, detail, ordering, due_start_time, due_end_time, must_do, finished, category, links, files, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, ordering, hidden, finished, title, detail, due_start_time, due_end_time, must_do, category, links, files, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -144,7 +144,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 4,
-                'default' => '9999',
+                'default' => '5',
                 'eval' => 'int'
             ]
         ],
