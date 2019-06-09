@@ -144,7 +144,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 4,
-                'default' => '5',
+                'default' => '-1',
                 'eval' => 'int'
             ]
         ],
